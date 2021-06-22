@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.currency-list{
+  display: flex;
+  flex-direction: column;
+}
+.add-currency-button{
+  width: 100px;
+}
