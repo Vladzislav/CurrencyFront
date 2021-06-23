@@ -4,27 +4,29 @@ import CurrencyAbbreviationList from "./CurrencyAbbreviationList";
 
 export default function CurrencyList(props) {
     return(
-        <ul className='currency-list'>
-            {props.currenciesTable.map((currency, i) => {
-                return <CurrencyItem
-                    currency={currency}
-                    key={i}
-                    number={i}
-                    onChange={props.onCurrencyChange}
-                    onCurrencyDelete={props.onCurrencyDelete}
-                />
-            })}
-            <input
-                type="button"
-                className='add-currency-button'
-                value='Добавить валюту'
+        <div className='currency_list-body'>
+            <ul className='currency_list'>
+                {props.currenciesTable.map((currency, i) => {
+                    return <CurrencyItem
+                        currency={currency}
+                        key={i}
+                        number={i}
+                        onChange={props.onCurrencyChange}
+                        onCurrencyDelete={props.onCurrencyDelete}
+                    />
+                })}
+            </ul>
+            <span className='currency_list-add'
                 onClick={() => {props.toggleCurrencyList()}}
-            />
+            >
+                + Добавить валюту
+            </span>
             {
                 props.isCurrencyAbbreviationListShow &&
                 <CurrencyAbbreviationList list={props.currencyAbbreviationList} onCurrencyAdd={props.onCurrencyAdd}/>
             }
-        </ul>
+        </div>
+
 
     )
 }

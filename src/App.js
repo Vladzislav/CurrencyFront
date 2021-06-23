@@ -36,14 +36,12 @@ function App() {
                     list: [...displayedCurrenciesAbbr, curAbbreviation]
                 })).data
         )
-        console.log(displayedCurrenciesAbbr, currencyInfo, currentInfo[0])
     }
 
     const onCurrencyDelete = async (itemNumber) => {
         displayedCurrenciesAbbr.splice(itemNumber,1)
 
         setDisplayedCurrenciesAbbr(displayedCurrenciesAbbr);
-        console.log(displayedCurrenciesAbbr);
         setCurrencyInfo(
             (await axios.put('http://localhost:3001/currencies/recount',
                 {
@@ -51,8 +49,6 @@ function App() {
                     list: displayedCurrenciesAbbr
                 })).data
         )
-
-        console.log(displayedCurrenciesAbbr, currencyInfo, currentInfo[0])
     }
 
 
