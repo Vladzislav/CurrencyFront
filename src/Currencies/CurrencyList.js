@@ -22,7 +22,7 @@ export default function CurrencyList(props) {
                 + Добавить валюту
             </span>
             {
-                props.isCurrencyAbbreviationListShow &&
+                props.isCurrencyAbbreviationListShow && props.currencyAbbreviationList.length !== 0 &&
                 <CurrencyAbbreviationList list={props.currencyAbbreviationList} onCurrencyAdd={props.onCurrencyAdd}/>
             }
         </div>

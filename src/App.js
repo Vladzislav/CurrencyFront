@@ -56,7 +56,7 @@ function App() {
 
     return (
         <div className='wrapper'>
-            {currencyInfo.currencies.length && currencyInfo.abbrList.length ? (
+            {currencyInfo.currencies.length && currencyInfo.abbrList ? (
                 <CurrencyList
                     currenciesTable={currencyInfo.currencies}
                     onCurrencyChange={onCurrencyChange}
